@@ -43,4 +43,4 @@ jobs:
       # 🔍 TypeScript normal (CI fail)
       - name: 🧪 Run TypeScript (CI check)
         if: github.event_name != 'pull_request'
-        run: pnpm typecheck
+        run: pnpm type-check
