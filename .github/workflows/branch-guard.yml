@@ -1,0 +1,28 @@
+name: Branch Protection (Simulated)
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  block-direct-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚫 Block PR not coming from develop
+        if: github.actor != 'dependabot[bot]'
+        run: |
+          echo "Base: ${{ github.base_ref }}"
+          echo "Head: ${{ github.head_ref }}"
+
+          if [ "${{ github.head_ref }}" != "develop" ]; then
+            echo "❌ PR must come from the develop branch."
+            exit 1
+          fi
+
+      - name: ✅ Allow Dependabot PRs
+        if: github.actor == 'dependabot[bot]'
+        run: echo "🤖 Dependabot PR allowed"
+
+      - name: ✅ Confirm valid source branch
+        run: echo "Branch validation completed"
