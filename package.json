@@ -17,7 +17,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "expo": "~55.0.8",
+    "expo": "~55.0.15",
     "expo-status-bar": "~55.0.4",
     "react": "19.2.0",
     "react-native": "0.83.2"
