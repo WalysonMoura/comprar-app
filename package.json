@@ -23,7 +23,7 @@
     "react-native": "0.83.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^20.5.0",
+    "@commitlint/cli": "^21.0.1",
     "@commitlint/config-conventional": "^20.5.0",
     "@types/react": "~19.2.2",
     "eslint": "^9.39.4",
